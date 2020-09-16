@@ -4,29 +4,37 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Raleway", sans-serif;
+html {
   font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background: #f5f4f2;
 }
 
 header {
   display: flex;
-  height: 90vh;
-  width: 100vw;
-  background-color: rgb(31, 31, 31);
+  height: 80vh;
+  width: 100%;
+  background-color: rgb(15, 15, 15);
   align-items: center;
+  box-shadow: inset 0px -66px 50px -50px black;
 }
 
-#img-div {
+header figure {
+  height: inherit;
+  flex-basis: 100%;
   display: flex;
   align-items: flex-end;
-  height: 100%;
+  z-index: 2;
 }
 
 header img {
-  max-height: 80vh;
-  width: auto;
-  filter: drop-shadow(2px -1px 15px rgb(0, 0, 0));
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(2px -1px 5px rgb(0, 0, 0));
 }
 
 #title {
@@ -36,8 +44,216 @@ header img {
     rgb(189, 89, 255) 0%,
     rgb(250, 82, 82) 100%
   );
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   font-size: 1.8rem;
+  user-select: none;
+}
+
+.gradientBanner {
+  width: 100%;
+  height: 0.4rem;
+  background: linear-gradient(
+    90deg,
+    rgb(250, 82, 82) 0%,
+    rgb(189, 89, 255) 100%
+  );
+  background-clip: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Se usó position relative, z-index y el background para esconder la drop-shadow inferior de la imagen del header */
+.tributeInfo {
+  background: #f5f4f2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.infoContainer {
+  width: 80%;
+  margin-top: 3rem;
+  padding: 0 2rem 0 2rem;
+  border-left: 1px solid rgb(197, 197, 197);
+}
+
+.infoContainer p {
+  margin: 1rem 0 1rem 0;
+  color: rgb(68, 68, 68);
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.albumsSection {
+  margin: 2rem 0 3rem 0;
+}
+
+.albumsContainer {
+  margin-top: 1.5rem;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 20px;
+  transition: 0.2s all;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  z-index: 3;
+  box-shadow: 0 0 5px rgb(29, 29, 29);
+}
+
+.album1 {
+  background-image: url("./Images/almendra-front.jpg");
+}
+.album2 {
+  background-image: url("./Images/artaud-front.jpg");
+}
+.album3 {
+  background-image: url("./Images/durazno-sangrando-front.jpg");
+}
+.album4 {
+  background-image: url("./Images/alma-de-diamante-front.jpg");
+}
+.album5 {
+  background-image: url("./Images/kamikaze.jpg");
+}
+
+section figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.moreInfo {
+  width: 100%;
+  background-color: rgb(221, 221, 221);
+  padding: 2rem;
+  margin: 1.5rem 0 1.5rem 0;
+  border-radius: 15px;
+}
+
+.moreInfo p {
+  text-align: center;
+}
+
+.moreInfo a {
+  text-decoration: none;
+  background: linear-gradient(
+    90deg,
+    rgb(189, 89, 255) 0%,
+    rgb(250, 82, 82) 100%
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.2s all;
+}
+
+.moreInfo a:hover {
+  text-shadow: 0 0 2px rgba(59, 59, 59, 0.212);
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: rgb(15, 15, 15);
+  text-align: center;
+}
+
+footer p {
+  color: white;
+  font-size: 1rem;
+}
+
+footer a:first-child {
+  font-style: normal;
+  color: rgb(64, 206, 64);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s all;
+}
+
+footer a:last-child {
+  font-style: normal;
+  text-decoration: none;
+  background: linear-gradient(
+    90deg,
+    rgb(189, 89, 255) 0%,
+    rgb(250, 82, 82) 100%
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transition: 0.2s all;
+}
+
+footer a:hover {
+  text-shadow: 0 0 3px rgba(214, 214, 214, 0.308);
+}
+
+.moreInfo a:hover {
+  text-shadow: 0 0 2px rgba(59, 59, 59, 0.212);
+}
+
+::selection {
+  background: rgba(240, 66, 188, 0.5); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgba(240, 66, 188, 0.5); /* Gecko Browsers */
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+
+  header {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  #title {
+    padding: 30px 0 30px 0;
+  }
+
+  .infoContainer {
+    width: 90%;
+  }
+
+  .infoContainer p {
+    font-size: 1.6rem;
+  }
+
+  .albumsContainer {
+    flex-direction: column;
+    height: 100rem;
+  }
+
+  footer {
+    padding: 3rem 0 3rem 0;
+  }
+
+  footer p {
+    font-size: 1.5rem;
+  }
+
+  section figcaption {
+    font-size: 1.6rem;
+  }
 }
