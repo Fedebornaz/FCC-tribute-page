@@ -20,3 +20,5 @@ Miércoles 16 de Septiembre (2 semanas)
 - En este 1er proyecto, _no nos interesa que sea responsive y mobile-friendly_ (es un plus, pero no un requisito)
 - **Recomendación:** hacer wireframes antes de empezar a maquetar (por ej, usando Figma)
 - hacer un deploy del proyecto en [Vercel](https://vercel.com/)
+
+Live demo: https://spinetta-tribute-page.vercel.app
