@@ -4,20 +4,32 @@
   box-sizing: border-box;
 }
 
+:root {
+  --gradient: linear-gradient(
+    90deg,
+    rgb(189, 89, 255) 0%,
+    rgb(250, 82, 82) 100%
+  );
+  --backgroundWhite: #f5f4f2;
+  --backgroundBlack: #0f0f0f;
+  --contrastGray: #d6d6d6;
+  --textSelectionColor: rgba(240, 66, 188, 0.5);
+}
+
 html {
   font-size: 16px;
   font-family: "Raleway", sans-serif;
 }
 
 body {
-  background: #f5f4f2;
+  background: var(--backgroundWhite);
 }
 
 header {
   display: flex;
   height: 80vh;
   width: 100%;
-  background-color: rgb(15, 15, 15);
+  background-color: var(--backgroundBlack);
   align-items: center;
   box-shadow: inset 0px -66px 50px -50px black;
 }
@@ -39,11 +51,7 @@ header img {
 
 #title {
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgb(189, 89, 255) 0%,
-    rgb(250, 82, 82) 100%
-  );
+  background: var(--gradient);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,11 +63,7 @@ header img {
 .gradientBanner {
   width: 100%;
   height: 0.4rem;
-  background: linear-gradient(
-    90deg,
-    rgb(250, 82, 82) 0%,
-    rgb(189, 89, 255) 100%
-  );
+  background: var(--gradient);
   background-clip: border-box;
   position: relative;
   z-index: 2;
@@ -67,7 +71,6 @@ header img {
 
 /* Se usó position relative, z-index y el background para esconder la drop-shadow inferior de la imagen del header */
 .tributeInfo {
-  background: #f5f4f2;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -77,7 +80,7 @@ header img {
   width: 80%;
   margin-top: 3rem;
   padding: 0 2rem 0 2rem;
-  border-left: 1px solid rgb(197, 197, 197);
+  border-left: 1px solid var(--contrastGray);
 }
 
 .infoContainer p {
@@ -139,7 +142,7 @@ section figcaption {
 
 .moreInfo {
   width: 100%;
-  background-color: rgb(221, 221, 221);
+  background-color: var(--contrastGray);
   padding: 2rem;
   margin: 1.5rem 0 1.5rem 0;
   border-radius: 15px;
@@ -151,11 +154,7 @@ section figcaption {
 
 .moreInfo a {
   text-decoration: none;
-  background: linear-gradient(
-    90deg,
-    rgb(189, 89, 255) 0%,
-    rgb(250, 82, 82) 100%
-  );
+  background: var(--gradient);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -171,12 +170,12 @@ footer {
   height: auto;
   margin-top: 2rem;
   padding: 2rem;
-  background-color: rgb(15, 15, 15);
+  background-color: var(--backgroundBlack);
   text-align: center;
 }
 
 footer p {
-  color: white;
+  color: var(--backgroundWhite);
   font-size: 1rem;
 }
 
@@ -191,11 +190,7 @@ footer a:first-child {
 footer a:last-child {
   font-style: normal;
   text-decoration: none;
-  background: linear-gradient(
-    90deg,
-    rgb(189, 89, 255) 0%,
-    rgb(250, 82, 82) 100%
-  );
+  background: var(--gradient);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -212,10 +207,10 @@ footer a:hover {
 }
 
 ::selection {
-  background: rgba(240, 66, 188, 0.5); /* WebKit/Blink Browsers */
+  background: var(--textSelectionColor); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: rgba(240, 66, 188, 0.5); /* Gecko Browsers */
+  background: var(--textSelectionColor); /* Gecko Browsers */
 }
 
 @media screen and (max-width: 600px) {
