@@ -107,7 +107,6 @@ header img {
   background-repeat: no-repeat;
   height: 100%;
   flex-grow: 1;
-  flex-basis: 20px;
   transition: 0.2s all;
 }
 
@@ -237,7 +236,15 @@ footer a:hover {
 
   .albumsContainer {
     flex-direction: column;
-    height: 100rem;
+    width: 100%;
+    align-items: center;
+    height: 160rem;
+  }
+
+  .box {
+    height: auto;
+    width: 80%;
+    margin-top: 15px;
   }
 
   footer {
@@ -250,5 +257,18 @@ footer a:hover {
 
   section figcaption {
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .albumsContainer {
+    flex-direction: column;
+    height: 100rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .albumsContainer {
+    height: 8rem;
   }
 }
